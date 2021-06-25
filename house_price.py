@@ -15,18 +15,15 @@ X = df[["OverallQual"]].values
 y = df["SalePrice"].values
 
 # アルゴリズムに線形回帰(Linear Regression)を採用
-# Xとyに関して直線のモデルで関係を調べる
+# Xとyに関して直線の関係をモデル化する
 slr = LinearRegression()
 
 # fit関数でモデル作成
 slr.fit(X,y)
 
-# 偏回帰係数(回帰分析において得られる回帰方程式の各説明変数の係数)を出力
-# 偏回帰係数はscikit-learnのcoefで取得
+# 傾きを出力
 print('傾き：{0}'.format(slr.coef_[0]))
-
-# y切片(直線とy軸との交点)を出力
-# 余談：x切片もあり、それは直線とx軸との交点を指す
+# y切片を出力
 print('y切片: {0}'.format(slr.intercept_))
 
 # 散布図を描画
